@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youtube</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+ 
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            background-color: #fff;
+        }
+      header{
+         width: 100%;
+         /* height: 60px; */
+         background-color: rgb(5, 3, 0);
+         border: none;
+         padding: 0px 20px;
+         position: sticky;
+         height: 50px;
+         top: 0px;
+         z-index: 100px; 
+      }
+      nav{
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+     .left{
+      display: flex;
+      justify-content: left;
+      align-items: center;
+     }
+     .searchbar button {
+            width: 30px;
+            height: 40px; 
+            border: 1px solid #ccc;
+            background-color: #272323;
+            color: rgb(254, 254, 254);
+            border-radius: 0px 10px 10px 0px;
+            cursor: pointer;
+            border: none;
+     }
+     .searchbar input{
+           /* padding: 5px 100px 5px 5px;    */
+           padding: 0px 15px;
+           width: 300px;
+           height: 40px;
+           border: 1px solid #ccc2;
+           border-radius: 20px 0px 0px 20px;  
+           border: none;
+            background-color: black; 
+     } 
+     .searchbar input:focus{
+        color: white;
+      
+    }
+      .searchbar form{
+           display: flex;
+           align-items: center;
+           border: none;
+           background-color: #040000;
+        
+      }
+       .searchbar form a i{
+         border: 1px solid;
+         padding: 15px 0px;
+         border-radius: 10px;
+         border: 1px solid #ccc2;
+         background-color:  #272323; 
+         color: #fff;
+         border: none;
+         margin-left: 5px;
+         
+       }      
+     nav ul{
+          display: flex;
+         justify-content: center;
+         align-items: center;
+         list-style: none;
+         gap: 20px;
+      }
+      a{
+         text-align: center;
+         color: rgb(248, 247, 247);
+         text-decoration: none;
+      }
+      .left i{
+         padding: 7px 0px;
+         color: #fff;
+      }
+      .left h1 i{
+          color: rgb(241, 9, 9);
+      }
+      h1{
+         color: #fff;
+
+      }
+      .main{
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(0, 0, 0);
+        padding: 0px;
+        /* overflow: scroll; */
+        color: rgb(246, 247, 248);
+        cursor: pointer;
+        display: flex;
+         flex: 1; 
+      }
+     .sidebar{
+        width: 350px;
+       padding: 0px 10px;
+       height: 100%;
+     }
+     .container{
+      width: 100%;
+      background-color: #040000;
+      padding: 20px; 
+      height: 100%;
+     
+     }
+     .sidebar ul{
+        padding: 0px 15px 0px 10px;
+        list-style: none;
+        
+     }
+      .sidebar ul li{
+          padding: 9px; 
+          font-size: 23px;  
+     }
+     .sidebar ul li a{
+      color: white;
+     }
+     .main b{
+       color: white;
+      text-align: center;
+      padding-left: 10px;
+     }
+   #icon li i{
+      color: rgb(254, 252, 252);
+      }
+   .sidebar ul li i{
+       padding: 0px 10px 0px 0px;
+       margin-right:15px ;
+    }  
+    .sidebar ul li i{
+      color: #fff;
+    }
+    .content{
+      display: flex;
+      /* justify-content: center;
+      align-items: center; */
+      gap: 30px;
+    }
+   .content a{
+      border: 2px solid;
+      padding: 5px 10px ;
+      border-radius: 11px;
+      color: #fff;
+      border: none;
+      }
+      
+      .videos{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap; 
+    padding-top: 10px;
+}
+.images{
+    position: relative;
+    width: 30%;
+}
+
+.images img{
+    width: 100%;
+    height: 180px;
+   
+    display: block;
+    margin: 25px 0 10px;
+    object-fit: cover;
+}
+.time{
+    position: absolute;
+    top: 60%;
+    right: 5px;
+}
+
+.time span{
+    color: white;
+    background-color: black;
+    border-radius: 4px;
+    padding: 2px 5px;
+}
+h3{
+   color: rgb(249, 248, 248);
+  font-weight: bold;
+}
+h4{
+   color: rgb(252, 251, 251);
+}
+h4 a{
+    border: 1px solid;
+    margin-right: 5px;
+    border-radius: 25px;
+    border-color: #040000;
+}
+p{
+   color: rgb(255, 251, 251);
+}
+.sidebar:hover{
+   overflow-y: scroll;
+}
+
+    </style>
+
+
+
+
+
+   </head>
+
+<body>
+    
+<header>
+     <nav>
+       <div class="left"><span><i class="fa-solid fa-bars"></i></span>
+      <h1><i class="fa-brands fa-youtube"></i>Youtube<sup>NG</sup></h1>
+       </div>
+      <div class="searchbar">
+<form action="https://www.youtube.com/results" method="get">
+    <input name="search_query" placeholder="search" type="search">
+    
+    <button type="submit">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+    
+    <a href="#"><i class="fa-solid fa-microphone"></i></a></div>
+</form>
+</div>
+     
+      <ul id="icon">
+           <li><a href=""><i class="fa-solid fa-video"></i></a></li>
+           <li><a href=""><i class="fa-solid fa-grip"></i></a></li>
+           <li><a href=""><i class="fa-regular fa-bell"></i></a></li>
+           <li><a href=""><i class="fa-solid fa-a"></i></a></li>
+        </ul>
+     </nav>
+</header>
+<div class="main">
+<div class="sidebar">
+  <ul>
+    <li><i class="fa-solid fa-house"></i><a href="https://www.youtube.com/">Home</a></li>
+    <li><i class="fa-solid fa-play"></i><a href="https://www.youtube.com/shorts/REEgIKafEkE">Short</a></li>
+    <li><a href="https://www.youtube.com/feed/subscriptions">Subscription</a></li>
+    <hr>
+    <li><i class="fa-solid fa-folder-plus"></i><a href="https://www.youtube.com/feed/library">Library</a></li>
+    <li><i class="fa-solid fa-clock-rotate-left"></i><a href="https://www.youtube.com/feed/history">History</a></li>
+    <li><i class="fa-regular fa-circle-play"></i><a href="https://studio.youtube.com/channel/UC7azRBmuWasNFhKOKSz_PPQ/content">Your videos</a></li>
+    <li><i class="fa-regular fa-clock"></i><a href="https://www.youtube.com/playlist?list=WL">Watch later</a></li>
+    <li><i class="fa-regular fa-thumbs-up"></i><a href="https://www.youtube.com/playlist?list=LL">Liked videos</a></li>
+    <li><i class="fa-regular fa-circle-user"></i><a href="https://www.youtube.com/@AbdulSami-wf8wh">Your Channel</a></li>
+   <li><i class="fa-solid fa-download"></i><a href="https://www.youtube.com/feed/downloads">Download</a></li>
+   <hr><br>
+    <b>SUBSCRIPTIONS</b>
+    <li><i class="fa-solid fa-music"></i><a href="https://www.youtube.com/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ">Music</a></li>
+    <li><i class="fa-solid fa-trophy"></i><a href="https://www.youtube.com/channel/UCYfdidRxbB8Qhf0Nx7ioOYw">Sports</a></li>
+    <li><i class="fa-brands fa-discord"></i><a href="https://www.youtube.com/gaming">Gaming</a></li>
+   <li><i class="fa-regular fa-newspaper"></i><a href="https://www.youtube.com/channel/UCYfdidRxbB8Qhf0Nx7ioOYw">News</a></li>
+   <li><i class="fa-solid fa-gamepad"></i><a href="https://www.youtube.com/playables">Playables</a></li>
+   <li><i class="fa-solid fa-users"></i><a href="https://www.youtube.com/channel_memberships">Memberships</a></li>
+   <hr>
+   <li><i class="fa-regular fa-flag"></i><a href="https://www.youtube.com/reporthistory">Report </a></li>  
+</ul>
+</div>
+<div class="container">
+<div class="content">
+  <a href="#">All</a>
+  <a href="#">Music</a>
+  <a href="#">Mixes</a>
+  <a href="#">Telenovelas</a>
+  <a href="#">News</a>
+  <a href="#">Dubbing</a>
+  <a href="#">Movie musical</a>
+  <a href="#">Qawali music</a>
+  <a href="#">Gaming</a>
+  <a href="#">Live</a>
+  <a href="">Watched</a>
+  <!-- <a href="">Movie</a> -->
+</div>
+
+      <div class="videos">
+
+    <div class="images">
+      
+      <img src="https://i.ytimg.com/vi/FFZSgalRSQQ/maxresdefault.jpg" alt="Youtube Thumbnail">
+
+        <div class="time">
+            <span>5:30</span>
+        </div>
+   
+        <h3>How to Make YouTube Thumbnails in 5 Minutes</h3>
+        <h4>🖼️&nbsp;Anydesk Tutorials</h4>
+        <p>1.2M views • 2 years ago</p>
+    
+   </div> 
+
+    <div class="images">
+        <img src="cudton.jpeg" alt="Youtube Thumbnail">
+
+        <div class="time">
+            <span>8:20</span>
+        </div>
+
+        <h3>Second YouTube Video</h3>
+        <h4>🎥&nbsp;My Channel</h4>
+        <p>500K views • 1 year ago</p>
+    </div>
+
+    <div class="images">
+        <img src="images.jpeg" alt="Youtube Thumbnail">
+
+        <div class="time">
+            <span>10:15</span>
+        </div>
+
+        <h3>Third YouTube Video</h3>
+        <h4>🏞️&nbsp;My Channel</h4>
+        <p>800K views • 6 months ago</p>
+       </div> 
+     <div class="images">
+      <img src="ducky.jpeg" alt="dream house">
+
+      <div class="time">
+           <span>16:32</span>
+      </div>
+     
+      <h3>I Bought My Dream House | Biggest Purchase of My Life</h3>
+         <h4><a href="https://www.youtube.com/@DuckyBhai">🦆</a>Ducky Bhai</h4>
+      <p>2.8M • 1y ago</p>
+      
+   </div>  
+
+    <div class="images">
+        <img src="ajmal raza.jpeg" alt="shan-e-farooq-e-azam">
+
+        <div class="time">
+            <span>25:30</span>
+        </div>
+
+        <h3>Bayan |Shane-e-Farooq-e-Azam</h3>
+        <h4>📺&nbsp;Anydesk Tutorials</h4>
+        <p>1.2M views • 2years ago</p>
+    </div>
+
+    <div class="images">
+      <img src="piya ghr.jpg" alt="piya ghr aaya qawali">
+
+      <div class="time">
+          <span>10:15</span>
+      </div>
+
+      <h3> Coke Studio |Piya Ghr Aya</h3>
+      <h4>🎶&nbsp;Fareed Ayaz Qawal</h4>
+      <p>2M viwes• 1year ago</p>
+   </div>
+   
+    
+
+ </div>    <!-- Videos -->
+</div> <!-- Container-->
+</div> <!-- Main -->
+</div>
+</div>
+
+</body>
+</html>
